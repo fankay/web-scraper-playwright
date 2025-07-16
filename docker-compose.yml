@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web-scraper:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    # 为 Playwright 分配足够的内存
+    mem_limit: 2g
+    memswap_limit: 2g
+    # 启用共享内存，Playwright 需要
+    shm_size: 2g
+    # 安全选项
+    security_opt:
+      - seccomp:unconfined
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s 

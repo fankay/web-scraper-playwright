@@ -1,0 +1,29 @@
+{
+  "name": "web-scraper-playwright",
+  "version": "1.0.0",
+  "description": "Web scraping service using Express and Playwright",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "echo 'No build step required'",
+    "install-browsers": "npx playwright install chromium"
+  },
+  "keywords": ["web-scraping", "playwright", "express", "nodejs"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "playwright": "^1.41.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
