@@ -1,5 +1,5 @@
 # 使用 Playwright 官方镜像作为基础镜像
-FROM mcr.microsoft.com/playwright:v1.41.0-jammy
+FROM mcr.microsoft.com/playwright:v1.54.1-jammy
 
 # 设置工作目录
 WORKDIR /app
